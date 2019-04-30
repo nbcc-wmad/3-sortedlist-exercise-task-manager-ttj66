@@ -11,10 +11,21 @@ using System.Windows.Forms;
 namespace SortedListExTask
 {
     public partial class Form1 : Form
-    { string joe
+    {
+        Dictionary<DateTime, string> toDoLitst = new Dictionary<DateTime, string>();
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void btnAddTask_Click(object sender, EventArgs e)
+        {
+            if ((txtTask.Text).Trim() == String.Empty)
+            {
+                MessageBox.Show("You must enter a task");
+                txtTask.Select();
+                txtTask.Focus();
+            }
         }
     }
 }
